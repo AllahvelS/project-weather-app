@@ -9,16 +9,7 @@ form.addEventListener("submit", (event)=> {
 
     const locationInput = event.target[0].value
 
-    if(locationInput){
-       if(document.querySelector("#no-search")){
-        document.querySelector("#no-search").remove()
-       }
-       const unOrdered = document.querySelector(".weather-history ul")
-       const search = document.createElement("li")
-       search.innerText = locationInput
-       unOrdered.prepend(search)
-    }
-
+    
     
     // const locationInput = document.querySelector("#location-input")
     // console.log(locationInput.value)
@@ -39,7 +30,20 @@ form.addEventListener("submit", (event)=> {
         <p id="country">${country}</p>
         <p id="currently">${currently}</p>
         `
-
+        
+        if(locationInput){
+           if(document.querySelector("#no-search")){
+            document.querySelector("#no-search").remove()
+           }
+           const unOrdered = document.querySelector(".weather-history ul")
+           const search = document.createElement("li")
+           const link = document.createElement("a")
+           link.setAttribute("href", `https://wttr.in/${locationInput}`)
+           link.innerText = `${locationInput} - ${currently}°F`
+           search.appendChild(link)
+        //    search.innerText + ` - ${currently}°F`
+           unOrdered.prepend(search)
+        }
         
         console.log(article.innerHTML)
 
@@ -83,5 +87,5 @@ form.addEventListener("submit", (event)=> {
         console.log(error);
     });
 
-
+event.target.reset()
 });

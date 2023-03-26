@@ -1,0 +1,75 @@
+/* Header */
+header {
+    border: solid 2px;
+    text-align: center;
+    background-color: teal;
+    padding-bottom: 25px;
+  }
+  
+  .title {
+    color: rgb(0, 0, 0);
+  }
+  
+  #header-form {
+    margin-top: 25px;
+  }
+  
+  #location-input {
+    margin-left: 10px;
+  }
+  
+  /* Main content */
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    padding: 20px; 
+  }
+  article #current-weather {
+    position: relative;
+    right: 200px;
+  }
+  
+ aside #temperature-conversion-widget {
+    float: left;
+ }
+  
+  article {
+    border: solid 2px;
+    background-color: lightgray;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .upcoming {
+    margin-top: 20px;
+  }
+  
+  /* Sidebar */
+  aside section{
+    padding: 20px;
+  }
+  
+  .weather-history {
+    float: right;
+    width: 30%;
+    padding: 10px;
+    border: solid 2px;
+    margin-right: 20px;
+  }
+  
+  #history-heading {
+    margin-top: 0;
+  }
+  
+  #no-search {
+    margin-top: 20px;
+  }
+  
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
