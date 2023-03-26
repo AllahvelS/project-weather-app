@@ -1,5 +1,6 @@
 const form = document.querySelector("form")
 const submit = document.querySelector("submit-button")
+const main = document.querySelector("main")
 const info = document.querySelector("#location-name").innerHTML
 console.log(info)
 
@@ -10,18 +11,18 @@ form.addEventListener("submit", (event)=> {
 
     if(locationInput){
        if(document.querySelector("#no-search")){
-        document.querySelector("#no-search").remove
+        document.querySelector("#no-search").remove()
        }
-       const unOrdered = document.querySelector(".weather-history")
+       const unOrdered = document.querySelector(".weather-history ul")
        const search = document.createElement("li")
-       search.innerText
+       search.innerText = locationInput
        unOrdered.prepend(search)
     }
 
-
+    
     // const locationInput = document.querySelector("#location-input")
     // console.log(locationInput.value)
-
+    
     fetch(`https://wttr.in/${locationInput}?format=j1`)
     .then((response) => response.json())
     .then((data) =>  {
@@ -29,17 +30,54 @@ form.addEventListener("submit", (event)=> {
         let near = data.nearest_area[0]
         let region = near.region[0].value
         let country = near.country[0].value
-        let currently = current_condition[0].FeelsLikeF
-        const main = document.querySelector("main")
-
-        main.innerHTML = `
-            <p id="area">${locationInput}</p>
-            <p id="region">${region}</p>
-            <p id="country">${country}</p>
-            <p id="currently">${currently}</p>
+        let currently = data.current_condition[0].FeelsLikeF
+        const article = document.querySelector("#current-weather")
         
+        article.innerHTML = `
+        <p id="area">${locationInput}</p>
+        <p id="region">${region}</p>
+        <p id="country">${country}</p>
+        <p id="currently">${currently}</p>
         `
-        console.log(main.innerHTML)
+
+        
+        console.log(article.innerHTML)
+
+
+        const upcoming = document.querySelectorAll(".upcoming")
+        const forecast = data.weather
+        const today = forecast[0]
+        const tomorrow = forecast[1]
+        const dayAfterTomorrow = forecast[2]
+
+        upcoming[0].innerHTML = `
+        <h4>Today</h4>
+        <h4>Average Temperature:</h4>
+        <p>${today.avgtempF}</p>
+        <h4>Max Temperature:</h4>
+        <p>${today.maxtempF}</p>
+        <h4>Min Temperature:</h4>
+        <p>${today.mintempF}</p>
+        `
+        upcoming[1].innerHTML = `
+        <h4>Tomorrow</h4>
+        <h4>Average Temperature:</h4>
+        <p>${tomorrow.avgtempF}</p>
+        <h4>Max Temperature:</h4>
+        <p>${tomorrow.maxtempF}</p>
+        <h4>Min Temperature:</h4>
+        <p>${tomorrow.mintempF}</p>
+        `
+        upcoming[2].innerHTML = `
+        <h4>Day After Tomorrow</h4>
+        <h4>Average Temperature:</h4>
+        <p>${dayAfterTomorrow.avgtempF}</p>
+        <h4>Max Temperature:</h4>
+        <p>${dayAfterTomorrow.maxtempF}</p>
+        <h4>Min Temperature:</h4>
+        <p>${dayAfterTomorrow.mintempF}</p>
+        `
+        upcoming.append(main)
     })
     .catch((error) =>{
         console.log(error);
