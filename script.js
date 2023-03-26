@@ -8,15 +8,15 @@ form.addEventListener("submit", (event)=> {
 
     const locationInput = event.target[0].value
 
-    // if(locationInput){
-    //    if(document.querySelector("#no-search")){
-    //     document.querySelector("#no-search").remove
-    //    }
-    //    const unOrdered = document.querySelector(".weather-history")
-    //    const search = document.createElement("li")
-    //    search.innerText
-    //    unOrdered.prepend(search)
-    // }
+    if(locationInput){
+       if(document.querySelector("#no-search")){
+        document.querySelector("#no-search").remove
+       }
+       const unOrdered = document.querySelector(".weather-history")
+       const search = document.createElement("li")
+       search.innerText
+       unOrdered.prepend(search)
+    }
 
 
     // const locationInput = document.querySelector("#location-input")
