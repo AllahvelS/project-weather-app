@@ -14,24 +14,35 @@
         <form id="header-form">
             Pick a location<input type="text"
             id="location-input">
-            <br><input type="submit" id="submit-button">
+            <br>
+            <input type="submit" id="submit-button">
         </form>
     </header>
-    <aside id="temperature-conversion-widget">
-        <label for="convert-temp">Convert Temp Here</label>
-        <br>
-        <br>
-        <select name="Temp" id="choose-temp">
-            <option value="°F">Farenheit</option>
-            <option value="°C">Celsius</option>
-        </select>
-       
-    </aside>
+    <div class="grid-container">
+    <aside>
+        <form id="temperature-converter">
+          <label for="temp-to-convert">Convert the temperature:</label>
+          <br>
+          <input type="number" id="temp-to-convert" name="temp-to-convert" required>
+          <br>
+          <label for="to-c">to C</label>
+          <input type="radio" id="to-c" name="convert-temp" value="c" checked>
+          <br>
+          <label for="to-f">to F</label>
+          <input type="radio" id="to-f" name="convert-temp" value="f">
+          <br>
+          <input type="submit" value="Convert">
+          
+          <h4 id="converted-temperature">0.00</h4>
+        </form>
+      </aside>
+      
+      
     <main>
         <article id="current-weather">
             <p id="location-name">Choose a location to view the weather</p>
         </article>
-        <aside>
+        <aside class="upcoming-container">
             <article class="upcoming"></article>
             <article class="upcoming"></article>
             <article class="upcoming"></article>
@@ -44,5 +55,6 @@
             <p id="no-search">No previous searches</p>
         </section>
     </aside>
+</div>
 </body>
 </html>
