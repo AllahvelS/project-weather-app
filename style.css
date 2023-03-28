@@ -30,6 +30,7 @@ header {
     grid-template-columns: .5fr 1fr .5fr;
     align-items: center;
     justify-content: space-evenly;
+    width: 100%;
     
   }
   main {
@@ -56,8 +57,8 @@ header {
         border: solid 5px;
         background-color: lightgray;
         position: absolute;
-        top: 180px;
-        left: 10px;
+        top: 20%;
+        left: 2%;
         width: 20%;
         padding: 20px 0 0 20px;
     }
@@ -66,10 +67,10 @@ header {
     border: solid 2px;
     background-color: lightgray;
     position: absolute;
-    top: 180px;
-    right: 10px;
-    width: 20%;
-    margin-left: 500px;
+    top: 20%;
+    right: 2%;
+    width: 15%;
+    /* margin-left: 500px; */
     padding-left: 20px;
   }
   
@@ -80,4 +81,44 @@ header {
     max-width: 100%;
     height: auto;
   }
+
+  /* Media queries */
+  @media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+}
+@media only screen and (min-width: 572px) and (max-width: 850px){
+    #temp-to-convert{
+        width: 40%;
+    }
+    aside #temperature-converter {
+        width: 15%;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 571px){
+    /*Small smartphones [325px -> 425px]*/
+   
+    .upcoming-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+
   
+    aside #temperature-converter {
+        position: absolute;
+        left: 27%;
+        top: 175%;
+        width: 35%;
+    }
+    .weather-history { 
+        display: grid;
+        align-items: center;
+        position: relative;
+        right: 150%;
+        top: 75%;
+        width: 80%;
+       
+    }
+
+}
