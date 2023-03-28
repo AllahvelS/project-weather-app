@@ -81,9 +81,10 @@ function weatherPage(locationInput){
            const link = document.createElement("a")
          
            link.addEventListener("click", (event) =>{
+
             weatherPage(locationInput)
            })
-
+           
            link.setAttribute("href", "#")
            link.innerText = `${locationInput}`
            search.innerText = ` - ${currently}°F`

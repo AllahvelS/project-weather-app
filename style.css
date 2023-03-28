@@ -1,8 +1,8 @@
 /* Header */
 header {
-    border: solid 2px;
+    /* border: solid 2px; */
     text-align: center;
-    background-color: teal;
+    background-color: rgba(150, 203, 253, 0);
     padding-bottom: 25px;
   }
   
@@ -21,7 +21,9 @@ header {
   #location-input {
     margin-left: 10px;
   }
- 
+ body {
+    background-image: url('https://cdn.dribbble.com/users/2277649/screenshots/8498294/weather_dribbble_size.gif.gif') ;
+ }
   /* Main content */
   .grid-container {
     display: grid;
@@ -51,18 +53,24 @@ header {
     /* Sidebar */
  
     aside #temperature-converter {
+        border: solid 5px;
+        background-color: lightgray;
         position: absolute;
         top: 180px;
         left: 10px;
         width: 20%;
+        padding: 20px 0 0 20px;
     }
   
   .weather-history {
+    border: solid 2px;
+    background-color: lightgray;
     position: absolute;
     top: 180px;
     right: 10px;
     width: 20%;
     margin-left: 500px;
+    padding-left: 20px;
   }
   
  
