@@ -33,8 +33,6 @@ header {
   main {
     margin: 20px 0 0 0 ;
   }
- 
-
   
   article {
       border: solid 1px;
@@ -51,9 +49,7 @@ header {
     }
     
     /* Sidebar */
-    /* aside section{
-        padding: 20px;
-    } */
+ 
     aside #temperature-converter {
         position: absolute;
         top: 180px;
@@ -66,18 +62,10 @@ header {
     top: 180px;
     right: 10px;
     width: 20%;
-    /* padding-: 10px; */
-    /* border: solid 2px; */
     margin-left: 500px;
   }
   
-  #history-heading {
-    /* margin-top: 0; */
-  }
-  
-  #no-search {
-    /* margin-top: 20px; */
-  }
+ 
   
   /* Images */
   img {
