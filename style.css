@@ -108,7 +108,7 @@ header {
     aside #temperature-converter {
         position: absolute;
         left: 27%;
-        top: 175%;
+        top: 190%;
         width: 35%;
     }
     .weather-history { 
@@ -117,7 +117,7 @@ header {
         position: relative;
         right: 150%;
         top: 75%;
-        width: 80%;
+        width: 95%;
        
     }
 
